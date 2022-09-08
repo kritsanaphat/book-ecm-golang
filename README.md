@@ -1,10 +1,10 @@
 # Ecommerce
 # Routes
-- SignUp()
-- Login()
-- ProductViewAdmin()
-- SearchProduct()
-- SearchProductByQuery()
+- SignUp()😀
+- Login()🤝
+- ProductViewAdmin()🍎
+- SearchProduct()⛄
+- SearchProductByQuery()☄️
 
 # Model
 - User struct
@@ -21,11 +21,11 @@
 ***controllers.go***
 - HashPassword(password string)
 - VerifyPassword(userPassword string, givenPassword string) (bool, string) 
-- Signup() 
-- Login()
-- ProductViewerAdmin()
-- searchProduct()
-- SearchProductByQuery()
+- Signup() 😀
+- Login()🤝
+- ProductViewerAdmin()🍎
+- searchProduct()⛄
+- SearchProductByQuery()☄️
 
 ***cart.go***
 - AddToCart()
