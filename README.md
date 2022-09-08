@@ -14,5 +14,28 @@
 - Order struct
 - Payment struct
 
-
 # Main.go
+
+
+# Controllers
+***controllers.go***\
+- HashPassword(password string)
+- VerifyPassword(userPassword string, givenPassword string) (bool, string) 
+- Signup() 
+- Login()
+- ProductViewerAdmin()
+- searchProduct()
+- SearchProductByQuery()\
+
+\***cart.go***
+- AddToCart()
+- RemoveItem() 
+- GetItemFromCart()
+- BuyFromCart()
+- InstanBuy()\
+
+\***address.go***
+- AddAddress()
+- EditHomeAddress()
+- EditWorkAddress()
+- DeleteAddress()
