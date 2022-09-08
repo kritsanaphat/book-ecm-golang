@@ -15,6 +15,8 @@
 - Payment struct
 
 # Main.go
+- NewApplication(database.ProductData(database.Cliemt, "Product")🦀,
+ database.UserData(database.Client, "User"🍄)
 
 
 # Controllers
@@ -28,11 +30,11 @@
 - SearchProductByQuery()☄️
 
 ***cart.go***
-- AddToCart()
-- RemoveItem() 
+- AddToCart()🌐
+- RemoveItem() 🌐
 - GetItemFromCart()
-- BuyFromCart()
-- InstanBuy()\
+- BuyFromCart()🌐
+- InstanBuy()🌐\
 
 ***address.go***
 - AddAddress()
@@ -47,7 +49,12 @@
 - BuyItemFromCart()
 - InstantBuyer()
 
-***databasesetup***
+***databasesetup.go***
 - DBSet()
-- UserData(client *mongo.Client, collectionName string)
-- ProductData(client *mongo.Client, collectionName string)
+- UserData(client *mongo.Client, collectionName string)🍄
+- ProductData(client *mongo.Client, collectionName string)🦀
+- AddToCart()🌐
+- RemoveItem()🌐
+- BuyFromCart()🌐
+- InstanBuy()🌐
+
