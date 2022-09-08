@@ -39,3 +39,15 @@
 - EditHomeAddress()
 - EditWorkAddress()
 - DeleteAddress()
+
+# Database
+***cart.go***
+- AddProductToCart() 
+- RemoveCartItem()
+- BuyItemFromCart()
+- InstantBuyer()
+
+***databasesetup***
+- DBSet()
+- UserData(client *mongo.Client, collectionName string)
+- ProductData(client *mongo.Client, collectionName string)
