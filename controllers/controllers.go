@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -95,7 +96,32 @@ func Login() gin.HandlerFunc {
 		defer cancle()
 
 		var user models.User
-		c.BindJSON
+		if err := c.BindJSON(&user); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": err})
+			return
+		}
+		err := UserCollection.FindOne(ctx, bson.M{"email": user.Email}).Decode(&founduser)
+		defer cancle()
+
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "login or password incorrect"})
+			return
+		}
+
+		PasswordIsValid, msg := VerifyPassword(*user.Password, *founduser.Password)
+		defer cancle()
+
+		if !PasswordIsValid {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": msg})
+			fmt.Println(msg)
+			return
+		}
+
+		token, refreshToken, _ := generate.TokenGenerator(*founderuser.Email, *founderuser.First_Name, *founderuser.Last_Name, founderuser.User_ID)
+		defer cancle()
+
+		generate.UpdateAllTokens(token, refreshToken, founderuser.User_ID)
+		c.JSON(http.StatusFound, founduser)
 	}
 }
 
