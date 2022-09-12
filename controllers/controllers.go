@@ -90,7 +90,13 @@ func SignUp() gin.HandlerFunc {
 }
 
 func Login() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		var ctx, cancle = context.WithCancel(context.Background(), 100*time.Second)
+		defer cancle()
 
+		var user models.User
+		c.BindJSON
+	}
 }
 
 func ProductViewerAdmin() gin.HandlerFunc {

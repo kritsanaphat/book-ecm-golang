@@ -15,8 +15,8 @@
 - Payment struct
 
 # Main.go
-- NewApplication(database.ProductData(database.Cliemt, "Product")🦀,
- database.UserData(database.Client, "User"🍄)
+- NewApplication(database.ProductData(database.Cliemt, "Product")🦀\
+- database.UserData(database.Client, "User"🍄)
 
 
 # Controllers
@@ -24,6 +24,8 @@
 - HashPassword(password string)
 - VerifyPassword(userPassword string, givenPassword string) (bool, string) 
 - Signup() 😀
+    - email check
+    - phone check 
 - Login()🤝
 - ProductViewerAdmin()🍎
 - searchProduct()⛄
@@ -34,7 +36,7 @@
 - RemoveItem() 🌐
 - GetItemFromCart()
 - BuyFromCart()🌐
-- InstanBuy()🌐\
+- InstanBuy()🌐
 
 ***address.go***
 - AddAddress()
