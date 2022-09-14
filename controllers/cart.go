@@ -26,7 +26,7 @@ func NewApplication(prodCollection, userCollection *mongo.Collection) *Applicati
 
 }
 
-func (app *Application) AddToCart() gin.Handler {
+func (app *Application) AddToCart() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		productQueryID := c.Query("id")
 		if productQueryID == "" {
