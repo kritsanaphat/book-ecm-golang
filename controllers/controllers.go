@@ -209,12 +209,14 @@ func SearchProductByQuery() gin.HandlerFunc {
 			c.IndentedJSON(404, "something went wrong in fetching the dbquery")
 			return
 		}
+
 		err = searchquerydb.All(ctx, &searchproducts)
 		if err != nil {
 			log.Println(err)
 			c.IndentedJSON(400, "invalid")
 			return
 		}
+
 		defer searchquerydb.Close(ctx)
 		if err := searchquerydb.Err(); err != nil {
 			log.Println(err)
