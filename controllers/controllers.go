@@ -139,7 +139,7 @@ func Login() gin.HandlerFunc {
 	}
 }
 
-func ProductViewerAdmin() gin.HandlerFunc {
+func ProductViewAdmin() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
 		var products models.Product
@@ -159,7 +159,7 @@ func ProductViewerAdmin() gin.HandlerFunc {
 	}
 }
 
-func searchProduct() gin.HandlerFunc {
+func SearchProduct() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var productlist []models.Product
 		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
