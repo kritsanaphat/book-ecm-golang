@@ -6,7 +6,6 @@ import (
 	"log"
 	"time"
 
-	"github.com/percybolmer/ddd-go/domain/customer/mongo"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
