@@ -17,4 +17,5 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: development
       ME_CONFIG_MONGODB_ADMINPASSWORD: testpassword
-      ME_CONFIG_MONGODB_URL: mongodb://development:testpassword@mongo:27017/
+      ME_CONFIG_MONGODB_URL: mongodb+srv://development:testpassword@cluster0.xqelieb.mongodb.net/?retryWrites=true&w=majority
+      
