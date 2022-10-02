@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"log"
+	"net/http"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -11,12 +13,24 @@ import (
 	"github.com/kritsanaphat/book-ecm-golang/routes"
 )
 
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/home" {
+		http.Error(w, "404 not found", http.StatusNotFound)
+		return
+	}
+	if r.Method != "GET" {
+		http.Error(w, "method is not supported", http.StatusNotFound)
+		return
+	}
+	fmt.Fprintf(w, "hello nakub!")
+}
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8000"
 	}
-
+	http.HandleFunc("/hello", helloHandler)
 	app := controllers.NewApplication(database.ProductData(database.Client, "Product"), database.UserData(database.Client, "User"))
 
 	router := gin.New()
