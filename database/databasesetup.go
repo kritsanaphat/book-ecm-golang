@@ -11,7 +11,9 @@ import (
 )
 
 func DBSet() *mongo.Client {
-	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://ksnppjr:qL7uxgdjbo@cluster0.kyvkvul.mongodb.net/?retryWrites=true&w=majority"))
+	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv:/kritsanaphat:kritsanaphat@librarydb.aik7jkm.mongodb.net/?retryWrites=true&w=majority"))
+
+	"))
 
 	if err != nil {
 		log.Fatal(err)
