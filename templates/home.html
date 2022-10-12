@@ -7,28 +7,32 @@
 </head>
 <body>
 
-    <input id="first_name"/>
-    <input id="last_name"/>
-    <input id="email"/>
-    <input id="password"/>
-    <input id="phone"/>
+    <input id="fn"/>
+    <input id="ln"/>
+    <input id="e"/>
+    <input id="pass"/>
+    <input id="p"/>
     <button id="submit">submit</button>
     
 
 </body>
 <script>
     const sm = document.getElementById("submit")
-    const fn = document.getElementById("first_name")
-    const ln = document.getElementById("last_name")
-    const e = document.getElementById("email")
-    const pass = document.getElementById("password")
-    const p = document.getElementById("phone")
-    const submit = () => { axios.post('http://localhost:8000/user/signup').then(response => {
+    const first_name = document.getElementById("fn")
+    const last_name= document.getElementById("ln")
+    const email = document.getElementById("e")
+    const password = document.getElementById("pass")
+    const phone = document.getElementById("p")
+    const submitF = () => { axios.post('http://localhost:8000/user/signup').then(response => {
 
     console.log(response);
+  
+    
+    
 });
+
 };
-sm.addEventListener('click', submit);
+sm.addEventListener('click', submitF);
 
 </script>
 </html>
