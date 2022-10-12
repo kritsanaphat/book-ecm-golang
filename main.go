@@ -25,12 +25,22 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "hello nakub!")
 }
 
+func Cors(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=ascii")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type,access-control-allow-origin, access-control-allow-headers")
+	w.Write([]byte("Hello, World!"))
+}
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8000"
 	}
-	http.HandleFunc("/hello", helloHandler)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/plm/cors", Cors)
+	http.ListenAndServe(":8000", mux)
+
 	app := controllers.NewApplication(database.ProductData(database.Client, "Product"), database.UserData(database.Client, "User"))
 
 	router := gin.New()
